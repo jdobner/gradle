@@ -23,10 +23,13 @@ import org.gradle.language.jvm.internal.EmptyClasspath;
 import org.gradle.platform.base.DependencySpecContainer;
 import org.gradle.platform.base.internal.DefaultDependencySpecContainer;
 
+import javax.inject.Inject;
+
 public class DefaultJavaLanguageSourceSet extends BaseLanguageSourceSet implements JavaSourceSet {
     private final Classpath emptyClasspath;
     private final DefaultDependencySpecContainer dependencies = new DefaultDependencySpecContainer();
 
+    @Inject
     public DefaultJavaLanguageSourceSet(ProjectLayout projectLayout) {
         emptyClasspath = new EmptyClasspath(projectLayout);
     }
